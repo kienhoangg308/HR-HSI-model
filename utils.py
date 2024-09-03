@@ -126,7 +126,7 @@ class DataInfo(object):
         self.noise = ['_20_30', '_25_35', '_30_40', '_50_60', '']
         # self.file_path = self.gen_path + self.folder_names[ndata] + self.data_names[ndata] + str(nratio) + self.noise[
         #     nsnr] + '.mat'
-        self.file_path = '/home/student11/HR-HSI-model/processed_data.mat'
+        self.file_path = '/home/student11/data/processed_data.mat'
         mat = sio.loadmat(self.file_path)
         hsi, msi = mat['I_HS'], mat['I_MS']  # h x w x L, H x W x l
         if 'I_REF' in mat.keys():
@@ -140,7 +140,7 @@ class DataInfo(object):
             srf = np.ones(shape=(msi.shape[-1], hsi.shape[-1]))
         # self.save_path = self.gen_path + self.folder_names[ndata] + name + '/r' + str(nratio) + self.noise[
         #     nsnr] + '/'
-        self.save_path = '/home/student11/HR-HSI-model'
+        self.save_path = '/home/student11/data'
         hsi = hsi.astype(np.float32)
         msi = msi.astype(np.float32)
         self.ref = ref.astype(np.float32)
